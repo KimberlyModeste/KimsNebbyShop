@@ -1,11 +1,15 @@
 import React from 'react'
 import Menubar from '../Components/Menubar'
+import PostCard from '../Components/PostCard'
 
 const Home = () => {
   return (
     <div>
       <Menubar />
-      Hello world
+      <div>
+        <PostCard body='something something' color={3}/>
+      </div>
+      
     </div>
   )
 }

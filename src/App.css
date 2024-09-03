@@ -9,7 +9,9 @@ body {
   margin: 0;
   height: 100vh;
   width: 100%;
-
+  background-image: url('/src/Resources/bgTest.jpg') !important;
+  background-size: cover !important;
+  background-repeat: repeat-y !important;
 }
 
 .ui.menu .menu {
@@ -90,4 +92,17 @@ input {
 
 .ui.grid>.middle-nav {
   justify-content: center !important;
+}
+
+#templates{
+  height: 200px;
+  background-color: transparent;
+  box-shadow: none;
+}
+#template-bottom{
+  transform: scaleY(-1);
+}
+#templates:hover{
+  transform: scale(1.2);
+  cursor: pointer;
 }
