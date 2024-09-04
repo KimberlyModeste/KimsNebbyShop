@@ -93,6 +93,34 @@ input {
 .ui.grid>.middle-nav {
   justify-content: center !important;
 }
+.ui.card.picture-card{
+  width: 150px;
+  background-color: transparent;
+  box-shadow: none;
+  display: inline-flex;
+  margin: 10px;
+}
+
+.ui.card>.image.picture-card-image{
+  width: inherit;  
+  height: 200px;
+}
+.ui.card>.image.picture-card-image.semi{
+  border-radius: 60px 60px 5px 5px !important;
+}
+.ui.card>.description{
+  background-color: white;
+}
+
+.ui.card>.button.semi {
+  background-color: #d7b5a3;
+
+}
+
+
+a.picture-card-link{
+  color: black;
+}
 
 #templates{
   height: 200px;
