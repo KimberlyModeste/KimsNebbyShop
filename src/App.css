@@ -14,9 +14,9 @@ body {
   margin: 0;
   height: 100vh;
   width: 100%;
-  background-image: url('/src/Resources/bgTest.jpg') !important;
-  background-size: cover !important;
-  background-repeat: repeat-y !important;
+  /* background-image: url('/src/Resources/bgTest.jpg') !important; */
+  /* background-size: cover !important; */
+  /* background-repeat: repeat-y !important; */
 }
 
 .background-div{
@@ -92,6 +92,15 @@ input {
   padding: 0 20px;
 }
 
+.navbar-left {
+  padding-left: 5vw;
+  display: inline !important;
+}
+
+.navbar-right {
+  padding-right: 5vw;
+}
+
 .search-icon{
   box-sizing: border-box !important;
   padding: 10px !important;
@@ -129,14 +138,26 @@ input {
   background-color: white !important;
 }
 
+
 .right-item {
   margin-left: auto !important;
-  margin-right: 0 !important;
+  margin-right: 0px !important;
 }
+.user {
+  margin-left: 1vw !important;
+}
+
 
 .ui.grid>.middle-nav {
   justify-content: center !important;
 }
+
+.middle-item{
+  padding-top: 2vh;
+  font-size: xx-large;
+  font-family: cursive;
+}
+
 .ui.card.picture-card{
   width: 150px;
   background-color: transparent;
@@ -160,7 +181,6 @@ input {
   background-color: #d7b5a3;
 
 }
-
 
 a.picture-card-link{
   color: black;

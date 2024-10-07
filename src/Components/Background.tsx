@@ -15,13 +15,14 @@ const Background = () => {
   })
 
   return (
-  <div>
-    <div className="background-div">
-      <div className='top background'></div>
-      <div className='back background'></div>
-    </div>
-    <div className='b-background'></div>
-  </div>
+  // <div>
+  //   <div className="background-div">
+  //     <div className='top background'></div>
+  //     <div className='back background'></div>
+  //   </div>
+  //   <div className='b-background'></div>
+  // </div>
+  <></>
   )
 }
 

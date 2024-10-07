@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Menu, Icon, MenuItem, Button, Grid, GridRow, GridColumn } from 'semantic-ui-react';
 import {Link} from 'react-router-dom';
+import { FiShoppingCart } from "react-icons/fi";
 
 const Menubar = () => {
 	const pathname : string =  window.location.hash
@@ -19,7 +20,7 @@ const Menubar = () => {
   return (
     <div>
       <Menu secondary>
-        <Menu.Menu position='left' classname="">
+        <Menu.Menu position='left' className="navbar-left">
           <Menu.Item className='search' name="search" >
             <input type="search" placeholder='Search here...' />
             <Icon name='search' className='search-icon' />
@@ -46,7 +47,10 @@ const Menubar = () => {
             </GridRow>
           </Grid>
         </Menu.Menu>
-        <Menu.Menu position='right'>
+        <Menu.Menu position='right' className='navbar-right'>
+          <Menu.Item className='right-item cart' name="shopping cart">
+            <FiShoppingCart />
+          </Menu.Item>
           <Menu.Item className='right-item user' name="user" >
             <Icon name="user outline" />
           </Menu.Item>

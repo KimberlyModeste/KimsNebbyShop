@@ -1,16 +1,16 @@
-import React from 'react'
 import Menubar from '../Components/Menubar'
-import PostCard from '../Components/PostCard'
-import PictureCard from '../Components/PictureCard'
+import PictureCardList from '../Components/PictureCardList'
+
+
 
 const Home = () => {
+
   return (
     <div>
-      <Menubar />
+      <Menubar  />
       <div>
-        
+        <PictureCardList />
       </div>
-      
     </div>
   )
 }

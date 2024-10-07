@@ -3,7 +3,7 @@ import { Card, Image, Button } from 'semantic-ui-react'
 import imgTest from "../Resources/ItemTest.jpg"
 
 interface props {
-  type: boolean,
+  type: boolean, //true for semi-circle picture : false for square
   body: string
   nextText: string
 }
