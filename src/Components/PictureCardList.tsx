@@ -14,7 +14,7 @@ const PictureCardList = () => {
       setHasLoaded(true)
       console.log("Items Arr", itemsArr)
     }
-  })
+  },[itemsArr, hasLoaded])
   
   async function itemsGet() {
     const temp : string | Item[] = await searchItems("");
@@ -24,7 +24,22 @@ const PictureCardList = () => {
   }
   return (
 	<div>
-	  
+    {/* <PictureCard type={false} title="Title? something price" price={1} ></PictureCard> */}
+    {
+      itemsArr ? 
+      itemsArr.map(item => (
+        <PictureCard 
+          type={false} 
+          title={item.name} 
+          price={item.price} 
+          onSale={item.onSale} 
+          onSaleBy={item.onSaleBy}
+        ></PictureCard>
+      ))
+      :
+      <></>
+    }
+
 	</div>
   )
 }

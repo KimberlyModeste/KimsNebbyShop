@@ -1,10 +1,7 @@
 import Menubar from '../Components/Menubar'
 import PictureCardList from '../Components/PictureCardList'
 
-
-
 const Home = () => {
-
   return (
     <div>
       <Menubar  />

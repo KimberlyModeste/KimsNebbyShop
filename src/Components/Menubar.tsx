@@ -21,21 +21,7 @@ const Menubar = () => {
     <div>
       <Menu secondary>
         <Menu.Menu position='left' className="navbar-left">
-          <Menu.Item className='search' name="search" >
-            <input type="search" placeholder='Search here...' />
-            <Icon name='search' className='search-icon' />
-          </Menu.Item>
-        </Menu.Menu>
-        <Menu.Menu>
-
-          <Grid>
-            <GridRow>
-              <GridColumn className='middle-item'>
-                Kim's Nebby Shop
-              </GridColumn>
-            </GridRow>
-            <GridRow className='middle-nav'>
-              <Menu.Item name = "home"
+        <Menu.Item name = "home"
               as={Link} to="/"
               > Home </Menu.Item>
               <Menu.Item name = "about"
@@ -44,9 +30,24 @@ const Menubar = () => {
               <Menu.Item name = "contact"
                 as={Link} to="/contact"
               > Contact </Menu.Item>
+        </Menu.Menu>
+
+        <Menu.Menu className='navbar-middle'>
+          <Grid>
+            <GridRow>
+              <GridColumn className='middle-item'>
+                Kim's Nebby Shop
+              </GridColumn>
+            </GridRow>
+            <GridRow className='middle-nav'>
+              <Menu.Item className='search' name="search" >
+                <input type="search" placeholder='Search here...' />
+                <Icon name='search' className='search-icon' />
+              </Menu.Item>
             </GridRow>
           </Grid>
         </Menu.Menu>
+
         <Menu.Menu position='right' className='navbar-right'>
           <Menu.Item className='right-item cart' name="shopping cart">
             <FiShoppingCart />
@@ -56,6 +57,7 @@ const Menubar = () => {
           </Menu.Item>
         </Menu.Menu>
       </Menu>
+      <div className='navbar-border'></div>
     </div>
   )
 }

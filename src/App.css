@@ -14,11 +14,9 @@ body {
   margin: 0;
   height: 100vh;
   width: 100%;
-  /* background-image: url('/src/Resources/bgTest.jpg') !important; */
-  /* background-size: cover !important; */
-  /* background-repeat: repeat-y !important; */
 }
 
+/* This is for Background stuff If I decide to implement it */
 .background-div{
   width: 100%;
   position: absolute;
@@ -53,20 +51,57 @@ height: var(--scroll-height);
 
 .top{
   margin-bottom: 50vh;
-  /* height: 2000px;  */
 }
 
 
-
+/* Menu stuff */
+/* Seperate menu into 3 parts */
 .ui.menu .menu {
   width: 33%;
 }
 
+
+/* Left side of navbar */
+.ui.secondary.menu>.navbar-left {
+  padding-left: 5vw;
+  margin-top: -8vh !important;
+  display: flex !important;
+}
+
+/* This changes the search button on hover */
+.ui.secondary.menu .item.search:hover {
+  width: 90%;
+  cursor: pointer;
+}
+.ui.secondary.menu .item.search:hover input {
+  display: block !important;
+}
+.ui.secondary.menu .item.search:hover .search-icon {
+  background-color: black;
+  color: white;
+}
+
+/* Middle of navbar */
+.ui.secondary.menu>.navbar-middle{
+  display: block !important;
+}
+.ui.grid>.middle-nav {
+  justify-content: center !important;
+}
+/* This is for the text */
+.middle-item{
+  padding-top: 2vh;
+  font-size: xx-large;
+  font-family: cursive;
+}
+/* This is for the search bar */
+.ui.secondary.menu {
+  box-shadow: black !important;
+  border: 10px;
+}
 .ui.secondary.menu .item.search {
   position: relative !important;
   top: 50%;
-  /* left: 50%; */
-  /* transform: translate(-50%, -50%); */
   transform: translate(0%, -50%);
   transition: all 1s;
   width: 50px;
@@ -76,7 +111,6 @@ height: var(--scroll-height);
   border: 4px solid white;
   padding: 5px;
 }
-
 input {
   position: absolute;
   top: 0;
@@ -87,20 +121,18 @@ input {
   outline: 0;
   border: 0.5;
   display: none;
-  font-size: 1em;
+  font-size: 1.5em !important;
   border-radius: 20px;
   padding: 0 20px;
 }
 
-.navbar-left {
-  padding-left: 5vw;
-  display: inline !important;
-}
 
+/* Right side of navbar */
 .navbar-right {
   padding-right: 5vw;
+  margin-top: -8vh !important;
 }
-
+/* Icons for the right side of navbar */
 .search-icon{
   box-sizing: border-box !important;
   padding: 10px !important;
@@ -114,69 +146,58 @@ input {
   transform: all 1s !important;
   color: black;
 }
-
-.ui.secondary.menu .item.search:hover {
-  width: 300px;
-  cursor: pointer;
-}
-
-.ui.secondary.menu .item.search:hover input {
-  display: block;
-}
-
-.ui.secondary.menu .item.search:hover .search-icon {
-  background-color: black;
-  color: white;
-}
-
-
-.App {
-  text-align: center;
-}
-
-.nav-button{
-  background-color: white !important;
-}
-
-
 .right-item {
   margin-left: auto !important;
   margin-right: 0px !important;
 }
+/* This changes the right-most right icon's 
+ * margin to be sized appropriatly  */
 .user {
   margin-left: 1vw !important;
 }
 
 
-.ui.grid>.middle-nav {
-  justify-content: center !important;
+/* Border bottom of navbar */
+.navbar-border{
+  border:1px groove grey;
 }
 
-.middle-item{
-  padding-top: 2vh;
-  font-size: xx-large;
-  font-family: cursive;
-}
 
+
+/* This is for picture card */
+/* The pc box */
 .ui.card.picture-card{
-  width: 150px;
+  width: 250px;
   background-color: transparent;
   box-shadow: none;
   display: inline-flex;
   margin: 10px;
 }
-
-.ui.card>.image.picture-card-image{
-  width: inherit;  
-  height: 200px;
+.ui.card.picture-card:hover{
+  transform: scale(1.1);
 }
+.ui.card>.image.picture-card-image{
+  width: 230px;  
+  height: 200px;
+  margin: auto;
+}
+/* This is for semi circle picture */
 .ui.card>.image.picture-card-image.semi{
   border-radius: 60px 60px 5px 5px !important;
+}
+.ui.card>.picture-card-title{
+  font-size: x-large;
+  margin: 10px;
+  text-align: left;
+  /* Add custom font family */
+}
+.ui.card>.picture-card-price {
+  text-align: left;
+  margin: 0px 10px 10px 10px;
 }
 .ui.card>.description{
   background-color: white;
 }
-
 .ui.card>.button.semi {
   background-color: #d7b5a3;
 
@@ -189,7 +210,7 @@ a.picture-card-link{
 #templates{
   height: 200px;
   background-color: transparent;
-  box-shadow: none;
+  /* box-shadow: none; */
 }
 #template-bottom{
   transform: scaleY(-1);
@@ -198,3 +219,11 @@ a.picture-card-link{
   transform: scale(1.2);
   cursor: pointer;
 }
+
+.App {
+  text-align: center;
+}
+
+/* .nav-button{
+  background-color: white !important;
+} */
