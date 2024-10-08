@@ -1,10 +1,6 @@
 import axios from "axios"
 import { Item } from "../Models/Item"
 
-interface searchResponse {
-	data: Item[];
-}
-
 export const searchItems = async (query : string) =>{
 	try {
 		const data = await axios.get<Item[]>('http://localhost:5261/kimsnebbyshopserver/item'+query,
