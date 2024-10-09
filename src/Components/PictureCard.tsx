@@ -26,15 +26,6 @@ const PictureCard = ({type, title, price, onSale, onSaleBy}:props) => {
           `$${price.toFixed(2)}`
         }
       </Card.Description>
-      {/* <Card.Description>
-        {body}
-      </Card.Description>
-      {
-        type === true ?
-        <Button className='semi'>{nextText}</Button>
-        :
-        <a href="" className="picture-card-link">{nextText} -{'>'}</a>
-      } */}
     </Card>
   )
 }
