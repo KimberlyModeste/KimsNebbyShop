@@ -189,6 +189,7 @@ input {
   font-size: x-large;
   margin: 10px;
   text-align: left;
+  color: black;
   /* Add custom font family */
 }
 .ui.card>.picture-card-price {
@@ -197,6 +198,7 @@ input {
 }
 .ui.card>.description{
   background-color: white;
+  color: black;
 }
 .ui.card>.button.semi {
   background-color: #d7b5a3;
@@ -206,6 +208,19 @@ input {
 a.picture-card-link{
   color: black;
 }
+
+/* This is for the carousel */
+.carousel {
+  width: 400px;
+}
+.fd-card-left{
+  margin: 10px;
+}
+.item-image {
+  width: 400px;
+  height: 530px;
+}
+
 
 #templates{
   height: 200px;
