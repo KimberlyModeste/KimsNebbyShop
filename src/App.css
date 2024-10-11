@@ -211,7 +211,9 @@ a.picture-card-link{
 
 /* This is for the carousel */
 .carousel {
-  width: 400px;
+  width: 400px !important;
+  height: 530px;
+
 }
 .fd-card-left{
   margin: 10px;
@@ -219,6 +221,15 @@ a.picture-card-link{
 .item-image {
   width: 400px;
   height: 530px;
+}
+/* Carousel small images */
+.carousel .thumb
+{
+  width: 100px !important;
+}
+.carousel .thumb img
+{
+  height: 100px;
 }
 
 

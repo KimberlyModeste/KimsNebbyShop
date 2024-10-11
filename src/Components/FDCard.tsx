@@ -49,7 +49,9 @@ const FDCard = ({name}:props) => {
   return (
     <div className='full-desc-card'>
       <div className='fd-card-left'>
-      <Carousel useKeyboardArrows={true} className='carousel'>
+      <Carousel useKeyboardArrows={true} className='carousel'
+      
+      >
         {
           item ?
           item.images.map((img, index) => (
@@ -64,7 +66,7 @@ const FDCard = ({name}:props) => {
             </div>
           ))
       }
-
+  
       </Carousel>
         {/* <Carousel className='carousel' >
           {
