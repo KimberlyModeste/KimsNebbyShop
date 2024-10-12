@@ -1,9 +1,15 @@
-import { useEffect, useState } from 'react'
+import { JSXElementConstructor, ReactElement, ReactNode, ReactPortal, useEffect, useState } from 'react'
 import { Item } from '../Models/Item';
 import { searchItems } from '../Api/ItemApi';
+
 import { Carousel } from "react-responsive-carousel";
-import { Image } from 'semantic-ui-react'
+import { Card, Grid, GridColumn, GridRow, Image } from 'semantic-ui-react'
 import noImage from "../Resources/NoImage.jpg"
+import Slider from "react-slick";
+import $ from "jquery"
+import { useNavigate } from 'react-router-dom';
+
+
 
 interface props {
   name: string
@@ -11,13 +17,10 @@ interface props {
 
 //Full Description Card
 const FDCard = ({name}:props) => {
-  const [item, setItem] = useState<Item>();
+  const [images, setImages] = useState<string[]>();
   const [hasLoaded, setHasLoaded] = useState<boolean>(false);
+  const navigate = useNavigate();
 
-  console.log("Item:",item)
-  const images = [
-    noImage
-  ];
 
   useEffect(() => {
     if(!name) {
@@ -25,7 +28,6 @@ const FDCard = ({name}:props) => {
     }
 
     async function itemsGet() {
-      console.log(name)
       var nTemp = name.replaceAll("?", "")
       nTemp = nTemp.replaceAll("%20","")
       nTemp = nTemp.replaceAll("%","")
@@ -33,62 +35,77 @@ const FDCard = ({name}:props) => {
       nTemp = nTemp.replaceAll("é","%C3%A9")
 
   
-      const temp : string | Item[] = await searchItems("?Name="+nTemp);
-      if(typeof(temp)!=='string'){
-          const item : Item = temp[0]
-          setItem(item)
+      const temp : string | Item = (await searchItems("?Name="+nTemp))[0];
+      if(temp === undefined)
+      {
+        navigate("/")
       }
+        
+      if(typeof(temp)!=='string'){
+          let arrTemp : string[] = temp.images.map(img => {return img.url});
+          setImages(arrTemp)
+      }
+
     }
 
     if(!hasLoaded){
       itemsGet()
       setHasLoaded(true)
+      $('.slick-dots').insertBefore('.slick-list');
     }
-  },[item, hasLoaded, name])
+  },[hasLoaded, name, navigate])
+
+  var settings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    appendDots: (dots: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined) => (
+      <div>
+        <ul className='carousel-dots'> {dots} </ul>
+      </div>
+    ),
+    customPaging: (i : number)  => (
+
+      <div>
+        {
+          images !== undefined && images.length > 0 ?
+          <Image src={images[i]} />
+          :
+          <Image src={noImage} />
+        }
+      </div>
+    )
+  };
 
   return (
     <div className='full-desc-card'>
-      <div className='fd-card-left'>
-      <Carousel useKeyboardArrows={true} className='carousel'
-      
-      >
-        {
-          item ?
-          item.images.map((img, index) => (
-          <div className="slide">
-            <img alt="sample_file" className='item-image' src={img.url} key={index} />
-          </div>
-          ))
-          :
-          images.map((URL, index) => (
-            <div className="slide">
-              <img alt="sample_file" className='item-image' src={URL} key={index} />
-            </div>
-          ))
-      }
-  
-      </Carousel>
-        {/* <Carousel className='carousel' >
-          {
-            item ?
-            item.images.map(img =>(
-              <div className="slide">
-                <img src={img.url} key={0} />
+      <Grid>
+        <GridRow>
+          <GridColumn className='fdc-column left'>
+            <Slider {...settings}>
+            {
+              images !== undefined && images.length > 0 ?
+              images.map(img => (
+                <div>
+                  <Image src={img} />
+                </div>
+              ))
+              :
+              <div>
+                <Image src={noImage} />
               </div>
-                // <Image src={img.url} className='item-image' />
-            ))
-            :
-            // <Carousel.Item>
-            //   <Image src={noImage} />
-            // </Carousel.Item>
-            <></>
-          }
-        </Carousel> */}
-      </div>
-      <div className='fd-card-right'>
+            }
+            </Slider>
+          </GridColumn>
 
-      </div>
-    
+          <GridColumn className='fdc-column right'>
+
+          </GridColumn>
+        </GridRow>
+      </Grid>
     </div>
   )
 }

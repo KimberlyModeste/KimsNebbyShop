@@ -60,25 +60,11 @@ height: var(--scroll-height);
   width: 33%;
 }
 
-
 /* Left side of navbar */
 .ui.secondary.menu>.navbar-left {
   padding-left: 5vw;
   margin-top: -8vh !important;
   display: flex !important;
-}
-
-/* This changes the search button on hover */
-.ui.secondary.menu .item.search:hover {
-  width: 90%;
-  cursor: pointer;
-}
-.ui.secondary.menu .item.search:hover input {
-  display: block !important;
-}
-.ui.secondary.menu .item.search:hover .search-icon {
-  background-color: black;
-  color: white;
 }
 
 /* Middle of navbar */
@@ -125,7 +111,18 @@ input {
   border-radius: 20px;
   padding: 0 20px;
 }
-
+/* This changes the search button on hover */
+.ui.secondary.menu .item.search:hover {
+  width: 90%;
+  cursor: pointer;
+}
+.ui.secondary.menu .item.search:hover input {
+  display: block !important;
+}
+.ui.secondary.menu .item.search:hover .search-icon {
+  background-color: black;
+  color: white;
+}
 
 /* Right side of navbar */
 .navbar-right {
@@ -146,16 +143,16 @@ input {
   transform: all 1s !important;
   color: black;
 }
-.right-item {
-  margin-left: auto !important;
-  margin-right: 0px !important;
+
+.right-item{
+  margin-left: 1vw !important;
+  margin-right: 0px !important
 }
 /* This changes the right-most right icon's 
  * margin to be sized appropriatly  */
-.user {
-  margin-left: 1vw !important;
+.right-item:first-of-type{
+  margin-left: auto !important;
 }
-
 
 /* Border bottom of navbar */
 .navbar-border{
@@ -209,28 +206,61 @@ a.picture-card-link{
   color: black;
 }
 
-/* This is for the carousel */
-.carousel {
-  width: 400px !important;
-  height: 530px;
-
+/* This is for the Full Description Card */
+/* Left Column */
+.ui.grid>.row>.column.fdc-column.left{
+  width: 50%;
 }
-.fd-card-left{
-  margin: 10px;
+/* Carousel */
+.slick-slider{
+  position: relative;
+  display: flex !important;
+  padding: 10px;
 }
-.item-image {
-  width: 400px;
-  height: 530px;
+/* Carousel big image */
+.slick-list{
+  width: 80%;
 }
 /* Carousel small images */
-.carousel .thumb
-{
-  width: 100px !important;
+.slick-dots{
+  position: relative !important;
+  bottom: 0px !important;
+  width: 30% !important;
+  display: flex !important;
+  justify-content: flex-end !important;
 }
-.carousel .thumb img
-{
-  height: 100px;
+.carousel-dots{
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+  
 }
+.slick-dots li:first-of-type{
+  margin-top: 0px !important;
+}
+.slick-dots li{
+  padding: 2px !important;
+  width: 6vw !important;
+  margin: 5px 10px !important;
+  height: auto !important;
+  display: flex !important;
+  border: 3px solid transparent ;
+  box-sizing: border-box;
+}
+.slick-dots li:last-of-type{
+  margin-bottom: 0px;
+}
+/* All actions for dots */
+.slick-dots li.slick-active, .slick-dots li:hover{
+  border: 3px solid #333;
+}
+
+/* Right Column */
+
+
+
+
 
 
 #templates{

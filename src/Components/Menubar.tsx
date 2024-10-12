@@ -49,10 +49,10 @@ const Menubar = () => {
         </Menu.Menu>
 
         <Menu.Menu position='right' className='navbar-right'>
-          <Menu.Item className='right-item cart' name="shopping cart">
+          <Menu.Item className='right-item' name="shopping cart">
             <FiShoppingCart />
           </Menu.Item>
-          <Menu.Item className='right-item user' name="user" >
+          <Menu.Item className='right-item' name="user" >
             <Icon name="user outline" />
           </Menu.Item>
         </Menu.Menu>
