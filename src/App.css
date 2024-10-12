@@ -221,6 +221,11 @@ a.picture-card-link{
 .slick-list{
   width: 80%;
 }
+.carousel-img{
+  object-fit: fill;
+  height: 80vh;
+}
+
 /* Carousel small images */
 .slick-dots{
   position: relative !important;

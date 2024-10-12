@@ -2,7 +2,6 @@ import { JSXElementConstructor, ReactElement, ReactNode, ReactPortal, useEffect,
 import { Item } from '../Models/Item';
 import { searchItems } from '../Api/ItemApi';
 
-import { Carousel } from "react-responsive-carousel";
 import { Card, Grid, GridColumn, GridRow, Image } from 'semantic-ui-react'
 import noImage from "../Resources/NoImage.jpg"
 import Slider from "react-slick";
@@ -90,12 +89,12 @@ const FDCard = ({name}:props) => {
               images !== undefined && images.length > 0 ?
               images.map(img => (
                 <div>
-                  <Image src={img} />
+                  <Image className='carousel-img' src={img} />
                 </div>
               ))
               :
               <div>
-                <Image src={noImage} />
+                <Image className='carousel-img' src={noImage} />
               </div>
             }
             </Slider>
