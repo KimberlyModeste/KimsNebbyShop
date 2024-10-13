@@ -208,7 +208,7 @@ a.picture-card-link{
 
 /* This is for the Full Description Card */
 /* Left Column */
-.ui.grid>.row>.column.fdc-column.left{
+.ui.grid>.row>.column.fdc-column{
   width: 50%;
 }
 /* Carousel */
@@ -219,6 +219,7 @@ a.picture-card-link{
 }
 /* Carousel big image */
 .slick-list{
+  /* width: 84.5%; */
   width: 80%;
 }
 .carousel-img{
@@ -259,6 +260,64 @@ a.picture-card-link{
 /* All actions for dots */
 .slick-dots li.slick-active, .slick-dots li:hover{
   border: 3px solid #333;
+}
+/* Arrows */
+.image-container{
+  width: 80%;
+  position: absolute;
+  display: flex;
+  z-index: 1;
+  margin-left: 30%
+}
+/* .arrow{
+  color: red !important;
+  background-color: blue !important;
+} */
+.slick-prev, .slick-next{
+  position: relative !important;
+  height: 80vh !important;
+  width: 50px !important;
+  transform: none !important;
+  z-index: 2 !important;
+  background-color:transparent !important;
+}
+.slick-next{
+  /* right: -35.5vw !important */
+  /* margin-right: 35% !important; */
+  right: 0 !important;
+  margin-left: 43% !important
+  /* margin-left: auto; */
+  /* right: 1.4vw !important; */
+}
+.slick-next:before, .slick-prev:before{
+    display: inline-table;
+    transform: scale(1.5, 3);
+    font-weight: 800;
+    mix-blend-mode: difference;
+    color: rgb(255,255,255) !important;
+    opacity: 1;
+}
+.slick-next:before{
+  content: ">" !important;
+}
+.slick-prev:before{
+  content: "<" !important;
+}
+
+.slick-prev{
+  left: 0 !important;
+  margin-left: 1.5%;
+}
+
+
+.slick-prev:before, .slick-next:before{
+  position: relative !important;
+  font-size: 30px !important;
+}
+
+.slick-prev:hover, .slick-next:hover
+{
+  background-color: rgba(255,255, 255, 0.5) !important;
 }
 
 /* Right Column */

@@ -2,7 +2,7 @@ import { JSXElementConstructor, ReactElement, ReactNode, ReactPortal, useEffect,
 import { Item } from '../Models/Item';
 import { searchItems } from '../Api/ItemApi';
 
-import { Card, Grid, GridColumn, GridRow, Image } from 'semantic-ui-react'
+import { Card, Grid, GridColumn, GridRow, Image, Icon } from 'semantic-ui-react'
 import noImage from "../Resources/NoImage.jpg"
 import Slider from "react-slick";
 import $ from "jquery"
@@ -33,15 +33,13 @@ const FDCard = ({name}:props) => {
       nTemp = nTemp.replaceAll(" ","%20")
       nTemp = nTemp.replaceAll("é","%C3%A9")
 
-  
-      const temp : string | Item = (await searchItems("?Name="+nTemp))[0];
-      if(temp === undefined)
+      const temp : string | Item[] = (await searchItems("?Name="+nTemp+"&isExactly=true"));
+      if(temp.length===0)
       {
         navigate("/")
       }
-        
-      if(typeof(temp)!=='string'){
-          let arrTemp : string[] = temp.images.map(img => {return img.url});
+      else if(typeof(temp)!=='string'){
+          let arrTemp : string[] =temp[0].images.map(img => img.url)
           setImages(arrTemp)
       }
 
@@ -50,7 +48,13 @@ const FDCard = ({name}:props) => {
     if(!hasLoaded){
       itemsGet()
       setHasLoaded(true)
-      $('.slick-dots').insertBefore('.slick-list');
+      const slicker = document.getElementsByClassName("slick-slider slick-initialized")[0]
+      const parent : HTMLDivElement = document.createElement('div')
+      const cList  = document.querySelectorAll(".slick-list")
+      parent.className= "image-container"
+      cList.forEach(e => parent.appendChild(e))
+      slicker.appendChild(parent)
+      $('.slick-dots').insertBefore('.slick-prev');
     }
   },[hasLoaded, name, navigate])
 
@@ -60,7 +64,9 @@ const FDCard = ({name}:props) => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: false,
+    arrows: true,
+    // nextArrow: <Icon name='angle right' class='arrow' ></Icon>,
+    // prevArrow: <div><Icon name='angle left' className='arrow' ></Icon></div>,
     appendDots: (dots: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined) => (
       <div>
         <ul className='carousel-dots'> {dots} </ul>
@@ -101,7 +107,7 @@ const FDCard = ({name}:props) => {
           </GridColumn>
 
           <GridColumn className='fdc-column right'>
-
+            <Card>Hi</Card>
           </GridColumn>
         </GridRow>
       </Grid>

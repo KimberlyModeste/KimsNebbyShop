@@ -11,7 +11,6 @@ const FullProduct = () => {
     if(name !== undefined)
     {
       setTitle(name.replaceAll("-"," "))
-      console.log(title)
     }
   },[title, name])
   
