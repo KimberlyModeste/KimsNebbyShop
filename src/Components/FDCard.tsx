@@ -18,6 +18,7 @@ interface props {
 const FDCard = ({name}:props) => {
   const [images, setImages] = useState<string[]>();
   const [hasLoaded, setHasLoaded] = useState<boolean>(false);
+  const [hasArrows, setHasArrows] = useState<boolean>(true);
   const navigate = useNavigate();
 
 
@@ -33,14 +34,21 @@ const FDCard = ({name}:props) => {
       nTemp = nTemp.replaceAll(" ","%20")
       nTemp = nTemp.replaceAll("é","%C3%A9")
 
-      const temp : string | Item[] = (await searchItems("?Name="+nTemp+"&isExactly=true"));
+      const temp : (string | Item | undefined)[] = (await searchItems("?Name="+nTemp+"&isExactly=true"));
       if(temp.length===0)
       {
         navigate("/")
       }
       else if(typeof(temp)!=='string'){
-          let arrTemp : string[] =temp[0].images.map(img => img.url)
-          setImages(arrTemp)
+          if(temp[0]?.valueOf() !== undefined && typeof(temp[0])!=='string')
+          {
+            let arrTemp : string[] | Item[] | undefined = temp[0].images.map(img => img.url)
+            setImages(arrTemp)
+            setHasArrows(arrTemp.length > 1)
+            console.log(arrTemp.length)
+          }
+          else
+            return undefined
       }
 
     }
@@ -64,9 +72,7 @@ const FDCard = ({name}:props) => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: true,
-    // nextArrow: <Icon name='angle right' class='arrow' ></Icon>,
-    // prevArrow: <div><Icon name='angle left' className='arrow' ></Icon></div>,
+    arrows: hasArrows,
     appendDots: (dots: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined) => (
       <div>
         <ul className='carousel-dots'> {dots} </ul>

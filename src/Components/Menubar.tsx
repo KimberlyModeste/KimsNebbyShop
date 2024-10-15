@@ -24,12 +24,12 @@ const Menubar = () => {
         <Menu.Item name = "home"
               as={Link} to="/"
               > Home </Menu.Item>
-              <Menu.Item name = "about"
-                as={Link} to="/about"
-              > About </Menu.Item>
-              <Menu.Item name = "contact"
-                as={Link} to="/contact"
-              > Contact </Menu.Item>
+              <Menu.Item name = "new"
+                as={Link} to="/new"
+              > New In </Menu.Item>
+              <Menu.Item name = "artisphere"
+                as={Link} to="/artishpere"
+              > Artisphere </Menu.Item>
         </Menu.Menu>
 
         <Menu.Menu className='navbar-middle'>

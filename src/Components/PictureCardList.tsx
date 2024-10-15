@@ -5,23 +5,37 @@ import PictureCard from '../Components/PictureCard'
 
 
 const PictureCardList = () => {
-	const [itemsArr, setItemsArr] = useState<Item[]>();
+	const [itemsArr, setItemsArr] = useState< Item[]>([]);
   const [hasLoaded, setHasLoaded] = useState<boolean>(false);
 
   useEffect(() =>{
     if(!hasLoaded){
       itemsGet()
       setHasLoaded(true)
-      console.log("Items Arr", itemsArr)
     }
   },[itemsArr, hasLoaded])
   
   async function itemsGet() {
-    const temp : string | Item[] = await searchItems("");
-    if(typeof(temp)!=='string'){
-        setItemsArr(temp)
+    // const temp : string | Item[] = await searchItems("");
+    // if(typeof(temp)!=='string'){
+    //     setItemsArr(temp)
+    // }
+    
+    const temp : (string | Item | undefined)[]  = await searchItems("");
+    if(typeof(temp) !== "string")
+    {
+      let arrTemp : Item[] = [];
+
+      temp.map(t => {
+        if(t !== undefined && typeof(t) !== "string")
+          arrTemp.push(t)
+      })
+      setItemsArr(arrTemp!)
+      setHasLoaded(true)
+
     }
   }
+
 
   return (
 	<div>

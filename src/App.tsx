@@ -9,11 +9,13 @@ import {  Routes, Route } from 'react-router-dom';
 import Home from './Pages/Home';
 // import Background from './Components/Background';
 import FullProduct from './Pages/FullProduct';
+import Menubar from './Components/Menubar';
 
 function App() {
   return (
     <div className="App">
       {/* <Background /> */}
+      <Menubar  />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/full-page/:name' element={<FullProduct />} />

@@ -1,5 +1,5 @@
 export interface Images {
 	id: number
-	itemId: number
+	// itemId: number
 	url: string
 };

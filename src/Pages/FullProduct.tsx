@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import Menubar from '../Components/Menubar'
 import FDCard from '../Components/FDCard'
 import { Params, useParams } from 'react-router-dom'
 
@@ -16,7 +15,6 @@ const FullProduct = () => {
   
   return (
     <div>
-      <Menubar />
       <div>
         <FDCard name={title} />
       </div>
