@@ -206,6 +206,7 @@ a.picture-card-link{
   color: black;
 }
 
+
 /* This is for the Full Description Card */
 /* Left Column */
 .ui.grid>.row>.column.fdc-column{
@@ -219,16 +220,15 @@ a.picture-card-link{
 }
 /* Carousel big image */
 .slick-list{
-  /* width: 84.5%; */
   width: 80%;
 }
 .carousel-img{
-  /* object-fit: fill; */
   width: 100%;
   height: 80vh;
 }
 
 /* Carousel small images */
+/* Default dots css */
 .slick-dots{
   position: relative !important;
   bottom: 0px !important;
@@ -236,16 +236,22 @@ a.picture-card-link{
   display: flex !important;
   justify-content: flex-end !important;
 }
+/* Custom dots css */
 .carousel-dots{
   margin: 0px;
   display: flex;
   flex-direction: column;
   padding: 0px;
-  
 }
+.carousel-dots>li>div>.ui.image {
+  height: 5.5vw;
+  width: 5.5vw;
+}
+/* First dot in stack */
 .slick-dots li:first-of-type{
   margin-top: 0px !important;
 }
+/* Dots are in a list */
 .slick-dots li{
   padding: 2px !important;
   width: 6vw !important;
@@ -255,6 +261,7 @@ a.picture-card-link{
   border: 3px solid transparent ;
   box-sizing: border-box;
 }
+/* Last dot in stack */
 .slick-dots li:last-of-type{
   margin-bottom: 0px;
 }
@@ -270,10 +277,7 @@ a.picture-card-link{
   z-index: 1;
   margin-left: 30%
 }
-/* .arrow{
-  color: red !important;
-  background-color: blue !important;
-} */
+/* Left and right arrows */
 .slick-prev, .slick-next{
   position: relative !important;
   height: 80vh !important;
@@ -282,20 +286,25 @@ a.picture-card-link{
   z-index: 2 !important;
   background-color:transparent !important;
 }
+/* Right arrow */
 .slick-next{
-  /* right: -35.5vw !important */
-  /* margin-right: 35% !important; */
   right: 0 !important;
-  /* margin-left: 43% !important */
-  /* margin-left: auto; */
-  /* right: 1.4vw !important; */
   position: absolute !important;
-  /* bottom: 0 !important; */
   top: 0% !important;
   margin: 10px;
   margin-right: 4%;
-
 }
+/* Left arrow */
+.slick-prev{
+  left: 0 !important;
+  margin-left: 1.5%;
+}
+/* Left and right hover */
+.slick-prev:hover, .slick-next:hover
+{
+  background-color: rgba(255,255, 255, 0.5) !important;
+}
+/* Left and right arrow img */
 .slick-next:before, .slick-prev:before{
     display: inline-table;
     transform: scale(1.5, 3);
@@ -303,41 +312,90 @@ a.picture-card-link{
     mix-blend-mode: difference;
     color: rgb(255,255,255) !important;
     opacity: 0.75 !important;
+    position: relative !important;
+    font-size: 30px !important;
 }
+/* Right arrow */
 .slick-next:before{
   content: ">" !important;
 }
+/* Left arrow */
 .slick-prev:before{
   content: "<" !important;
 }
 
-.slick-prev{
-  left: 0 !important;
-  margin-left: 1.5%;
-}
-
-
-.slick-prev:before, .slick-next:before{
-  position: relative !important;
-  font-size: 30px !important;
-}
-
-.slick-prev:hover, .slick-next:hover
-{
-  background-color: rgba(255,255, 255, 0.5) !important;
-}
-
 /* Right Column */
+/* Card */
+.ui.card.fdc-card {
+  box-shadow: none;
+}
+.fdc-right-card {
+  padding: 10px;
+}
+/* The card header */
+.fdc-card-head{
+  text-align: left;
+  font-size: xx-large;
+  padding: 10px;
+  line-height: 1;
+}
+/* Border */
+.fdc-border {
+  border:1px solid rgb(200,200,200);
+}
+/* Description */
+.description.fdc-desc{
+  padding: 10px;
+}
+.ui.card.fdc-card {
+  width: 100%;
+  padding-right: 5vw;
+}
+.fdc-onSaleBy{
+  color: red;
+  display: inline;
+  float: left;
+  margin-right: 2vw;
+}
+.fdc-price{
+  font-size: large;
+  text-align: left;
+}
+.fdc-list-price {
+  color: grey;
+  font-size: small;
+}
+.fdc-about {
+  text-align: left;
+}
+.in-stock {
+  text-align: left;
+  font-size: large;
+  padding-bottom: 5px;
+  font-weight: 800;
+  color: rgb(65, 196, 65);
+}
+.not-in-stock {
+  /* text-align: left; */
+  font-size: large;
+  padding-bottom: 5px;
+  font-weight: 800;
+  color: rgb(203, 4, 4);
+}
+.ui.fluid.dropdown {
+  white-space: pre !important;
+  margin-bottom: 15px;
+  background-color: gainsboro !important; 
+}
+.button.ui.button.fdc-atc-button {
+  background-color: rgb(240, 237, 49);
+  border-radius: 30px;
+  width: 90%;
+}
 
-
-
-
-
-
-#templates{
+/* #templates{
   height: 200px;
   background-color: transparent;
-  /* box-shadow: none; */
 }
 #template-bottom{
   transform: scaleY(-1);
@@ -345,11 +403,11 @@ a.picture-card-link{
 #templates:hover{
   transform: scale(1.2);
   cursor: pointer;
-}
+}*/
 
 .App {
   text-align: center;
-}
+} 
 
 /* .nav-button{
   background-color: white !important;

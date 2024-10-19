@@ -53,11 +53,10 @@ export const searchItems = async (query : string) =>{
     temp = temp.substring(0, temp.length-1)
     if(query.match("isExactly"))
     {
-      console.log("Temp: ",temp)
       return [all_product.find((val) => val.name === temp)]
     }
-    else{
-      console.log(temp)
+    else
+    {
       all_product.filter(function(val){return val.name.includes(temp)})
     }
     return all_product

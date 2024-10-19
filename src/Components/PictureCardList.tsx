@@ -26,6 +26,7 @@ const PictureCardList = () => {
     {
       let arrTemp : Item[] = [];
 
+      // eslint-disable-next-line array-callback-return
       temp.map(t => {
         if(t !== undefined && typeof(t) !== "string")
           arrTemp.push(t)

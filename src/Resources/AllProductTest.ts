@@ -10,12 +10,12 @@ const all_product : Item[] = [
 		onSaleBy: 0,
 		description: {
       id: 0,
-      about: ""
+      about: "The original pokeball. This one's soft, fits in you hand and very VERY throwable. Throw it at your brother, sister or close friends. Maybe one of them is secretly a pokemon!"
     },
 		images: [
       {
         id: 1005,
-        url: "https://previews.dropbox.com/p/thumb/ACbQU4c5VMzt63Uh0bC7AsCY3Vbqv-njAtpIjoKKJUEYBLDXcSm2JUX1Y-4CAn8fWIh1lzNCuU7macuCY5kkrWQc-bJrkNvWDgXQP5GqJvCSy8e5vOXaiKmMZofihkQvhQgshK0Zr7tzBEhlQkKqZjryoogKjElmHzXpAg-aBQDGLOSoP6nCBnllxbGEaCyvIkyK1akNgP-M9OR3y3RcLSy00fmNxI9uoPOzr0efoU9uPCxY4_d_hmXqy0y-ZP2U6dVvxYASB8zhk0LXxIFFYmmjfNDLbXcTzLPF2S27X7jqIuT0CuYKz9vk4che0T4CsJ8/p.jpeg"
+        url: "https://www.dropbox.com/scl/fi/a7koqlbhw3hl7yh14jxir/Pokeball.jpg?rlkey=c0osi1unqkfclp7akoob1h788&st=ao128uzl&raw=1"
       },
       {
         id: 1006,
@@ -51,7 +51,7 @@ const all_product : Item[] = [
       {
 
         id: 4,
-        url: "https://previews.dropbox.com/p/thumb/ACZf_iKhcjqoYGoM7OPSCTJUkGZZiMF32pI7gm1Oz1kapmaEVKpsTG_QBhL8uLJtce7ymna-2n-mLR5mvIg1fCaH08Z6-VrxTBk6SQFahs07GsqTG-f7AGoKAl8CFeMZS7roL33D1gUpOtMi5uVYDpTwhyLsl4NI4nDmuuk88RHvVFcRfxUwfJ23RWhdmbW5iwA3oS0VjDIIbJUaHCDvgMsZzKj-s565RoiNfbUVgUByZfbMz9lMw1h4phTQMle4B14_3-WmXgjlbZ_3vNERzhKD6oTBB5EvnmrdvI-hD3wlg_9u87UVU0ppvFnUZWxiT5SWNbDGxy-PN-SDlcnxK6jG/p.jpeg?is_prewarmed=true"
+        url: "https://www.dropbox.com/scl/fi/hgbfb5qhcju9uuztw5mri/Snake_plush.jpg?rlkey=uoezvpb5bm0rxr9zeyf7qp181&st=2in8bcgu&raw=1"
       }
     ],
 		tags: [
@@ -109,7 +109,7 @@ const all_product : Item[] = [
 		images: [
       {
         id: 1007,
-        url: "https://previews.dropbox.com/p/thumb/ACawBgZJD0VRPpVNmrdS6BTFzRQRq-_p89ChsMnNJtIlrMulWCErQw-Ez0-FxfoFnCPUzI-UH0sipfXVhzRhMQqoXTYs1v9mrKKXM32mu4dn5LhifKT4a0bkDSF28Z530ZxI9rn2MBBtQM9Le4Hz7GyvsWGVZJy4EgWLE6iAV7ipXwtjd-dKsk3xoCGLSFypYBhy12kf596_c_jPPXBcJUxMZsesl_SJc1Aukg4hk5FS0KSP3Isv79UFrR5_QmKr7QnT_bIqUK44ZnrvWoEA8kaOIMpIV5uZ1_s22TCfcd8EQj0N0yGINVtACva78HJJIIU/p.png"
+        url: "https://www.dropbox.com/scl/fi/s32oax2kihityn5eujnyn/Winter-dragons.png?rlkey=h3qrcrwt1az8meitoncpgx8in&st=y3hsib70&raw=1"
       }
     ],
 		tags: [
