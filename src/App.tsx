@@ -19,6 +19,10 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/full-page/:name' element={<FullProduct />} />
+        <Route path='/new' />
+        <Route path='/artishpere' />
+        <Route path='/cart' />
+        <Route path='/login' />
       </Routes>
     </div>
   );
