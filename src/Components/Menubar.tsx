@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Menu, Icon, MenuItem, Button, Grid, GridRow, GridColumn } from 'semantic-ui-react';
+import { Menu, Icon, Grid, GridRow, GridColumn } from 'semantic-ui-react';
 import {Link} from 'react-router-dom';
 import { FiShoppingCart } from "react-icons/fi";
 
@@ -50,54 +50,43 @@ const Menubar = () => {
   return (
     <div>
       <Grid>
-        <GridRow>
+        <GridRow className='nav-top'>
           <GridColumn>
-      <Menu secondary>
-        <Menu.Menu position='left' className="navbar-left">
-          <Menu.Item name = "home" as={Link} to="/"> { width < 720 ? <Icon name='home'/> : "Home"} </Menu.Item>
-            <Menu.Item name = "new" as={Link} to="/new" > { width < 720 ? <Icon name='star'/> : "New In"}  </Menu.Item>
-            <Menu.Item name = "artisphere" as={Link} to="/artishpere" > { width < 720 ? <Icon name='paint brush'/> : "Artishpere"} </Menu.Item>
-        </Menu.Menu>
+            <Menu secondary>
+              <Menu.Menu position='left' className="navbar-left">
+                <Menu.Item name = "home" as={Link} to="/"> { width < 720 ? <Icon name='home'/> : "Home"} </Menu.Item>
+                <Menu.Item name = "new" as={Link} to="/new" > { width < 720 ? <Icon name='star'/> : "New In"}  </Menu.Item>
+                <Menu.Item name = "artisphere" as={Link} to="/artishpere" > { width < 720 ? <Icon name='paint brush'/> : "Artishpere"} </Menu.Item>
+              </Menu.Menu>
 
-        <Menu.Menu className='navbar-middle'>
-          <div  className='middle-item'>
-            Kim's Nebby Shop
-          </div>
-          {/* <Grid>
-            <GridRow>
-              <GridColumn className='middle-item'>
-              </GridColumn>
-            </GridRow>
-            <GridRow className='middle-nav'>
-              <Menu.Item className='search' name="search" >
-                
-              </Menu.Item>
-            </GridRow>
-          </Grid> */}
-        </Menu.Menu>
+              <Menu.Menu className='navbar-middle'>
+                <div  className='middle-item'>
+                  Kim's Nebby Shop
+                </div>
+              </Menu.Menu>
 
-        <Menu.Menu position='right' className='navbar-right'>
-          <Menu.Item className='right-item' name="shopping cart" as={Link} to="/cart">
-            <FiShoppingCart />
-          </Menu.Item>
-          {/* Here need to change the icon depending on if signed in or not */}
-          <Menu.Item className='right-item' name="user" as={Link} to="/login">
-            <Icon name="user outline" />
-          </Menu.Item>
-        </Menu.Menu>
-      </Menu>
-      </GridColumn>
-      </GridRow>
-      <GridRow>
-        <GridColumn>
-      <div className='search'>
-          {/* <div className='search' name="search" > */}
-          <input type="search" placeholder='Search here...' />
-                <Icon name='search' className='search-icon' />
-          {/* </div> */}
-      </div>
-      </GridColumn>
-      </GridRow>
+              <Menu.Menu position='right' className='navbar-right'>
+                <Menu.Item className='right-item' name="shopping cart" as={Link} to="/cart">
+                  <FiShoppingCart />
+                </Menu.Item>
+                {/* Here need to change the icon depending on if signed in or not
+                    use "sign-in" as name for icon
+                */}
+                <Menu.Item className='right-item' name="user" as={Link} to="/login">
+                  <Icon name="user outline" />
+                </Menu.Item>
+              </Menu.Menu>
+            </Menu>
+          </GridColumn>
+        </GridRow>
+        <GridRow className='nav-bottom'>
+          <GridColumn>
+            <div className='search'>  
+              <input className='search-input' type="search" placeholder='Search here...' />
+              <Icon name='search' className='search-icon' />
+            </div>
+        </GridColumn>
+        </GridRow>
       </Grid>
       <div className='navbar-border'></div>
     </div>
