@@ -175,7 +175,7 @@ input.search-input {
 .search-icon{
   box-sizing: border-box !important;
   /* padding: 10px !important; */
-  padding: 4px !important;
+  padding: 3.5px !important;
   width: 35px !important;
   height: 35px !important;
   position: absolute !important;
