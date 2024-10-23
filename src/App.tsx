@@ -14,6 +14,7 @@ import New from './Pages/New';
 import Artisphere from './Pages/Artisphere';
 import Cart from './Pages/Cart';
 import Login from './Pages/Login';
+import SignUp from './Pages/SignUp';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path='/artishpere' element={<Artisphere />} />
         <Route path='/cart' element={<Cart />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/sign-up' element={<SignUp />} />
       </Routes>
     </div>
   );

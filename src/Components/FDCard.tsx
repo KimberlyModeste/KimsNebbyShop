@@ -181,7 +181,7 @@ const FDCard = ({name}:props) => {
                           <div className='in-stock'>In Stock</div>
                           <div className='quantity'>
                             <Dropdown 
-                              search
+                              // search
                               selection
                               fluid
                               allowAdditions

@@ -198,10 +198,9 @@ input.search-input {
 }
 
 /* Border bottom of navbar */
-.navbar-border, .login-border{
+.navbar-border, .login-border, .signup-border{
   border:1px groove grey;
 }
-
 
 
 /* This is for picture card */
@@ -437,19 +436,19 @@ a.picture-card-link{
 }
 
 
-/* Login page */
+/* Login page / sign up page */
 /* The overall login container */
-.login-container{
+.login-container, .signup-container{
   height: 87vh;
   background-image: url(./Resources/2024-10-19.png);
   background-size: cover;
 }
 /* The login card */
-.ui.card.login-card {
+.ui.card.login-card, .ui.card.signup-card {
   width: 28vw;
   border-radius: 15px;
 }
-.login {
+.login, .signup {
   display: flex;
   justify-content: center;
   padding: 20px;
@@ -459,42 +458,39 @@ a.picture-card-link{
   width: 50px;
   height: 50px;
 }
-.login-welcome{
+.login-welcome, .signup-welcome{
   font-size: large;
   font-weight: 600;
 }
-.login-welcome-desc {
+.login-welcome-desc, .signup-welcome-desc {
   font-size: small;
   color: #606060
 }
-.login-or {
+.login-or, .signup-or {
   display: flex;
   padding-top: 10px;
   padding-bottom: 10px;
 }
 /* These are for the ---or--- effect */
-.login-border {
+.login-border, .signup-border {
   width: 45%;
   height: 1px;
   margin-top: 10px;
 }
-.login-border:first-of-type {
+.login-border:first-of-type, .signup-border:first-of-type {
   margin-right: 5px;
 }
-.login-border:last-of-type {
+.login-border:last-of-type, .signup-border:last-of-type {
   margin-left: 5px;
 }
-.login-border-or{
+.login-border-or, .signup-border-or {
   font-size: x-small;
 }
 /* For the fields of the login */
-.login-field {
+.login-field, .signup-field {
   text-align: left;
   font-size: medium !important;
 }
-/* .ui.form .field>label. {
-  
-} */
 .bottom-form {
   display: flex;
   justify-content: space-between;
@@ -506,28 +502,44 @@ a.picture-card-link{
 input[type="checkbox" i]{
   margin-right: 5px !important;
 }
-.login-links {
+.login-links, .signup-links {
   font-weight: bold;
   color: black;
   padding-left: 5px;
 }
-button.ui.button.login-form-button {
+button.ui.button.login-form-button, 
+button.ui.button.signup-form-button {
   background-color: black;
   color: white;
   border-radius: 10px;
   width: 100%;
   margin-top: 10px;
 }
-.card-footer {
-  /* padding: 0px 10px 20px 10px */
-}
 .login-sign-up {
   padding-top: 10px;
   color: #606060;
 }
-
-
-
+.signup-form {
+  width: 100%;
+  padding: 10px;
+}
+.title {
+  font-size: large;
+  font-weight: 700;
+  text-align: left;
+  padding-bottom: 20px;
+}
+.state-zip, .exp-cvc {
+  display: flex;
+  width: 100%;
+}
+.state, .exp {
+  width: 50%;
+}
+.zip, .cvc {
+  padding-left: 5px;
+  width: 50%;
+}
 
 
 
@@ -551,3 +563,4 @@ button.ui.button.login-form-button {
 /* .nav-button{
   background-color: white !important;
 } */
+
